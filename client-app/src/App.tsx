@@ -11,20 +11,21 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:5000/api/activities')
       .then(response => {
-        setActivities(response.data)
+        console.log(response);
+        setActivities(response.data);
       })
   }, [])
   
   return (
     <div className="App">
-        <Header as='h2' icon='users' content='Reactivities'/>
-        <List>
-          {activities.map((activity: any) => (
-            <List.Item key={activity.id}>
-              {activity.title}
-            </List.Item>
-          ))}
-        </List>
+        <Header as='h2' icon='users' content='Reactivites'/>
+          <List>
+            {activities.map((activity: any)=> (
+              <List.Item key={activity.id}>
+                {activity.title}
+              </List.Item>
+            ))}
+          </List>
     </div>
   );
 }
