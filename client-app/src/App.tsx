@@ -18,7 +18,14 @@ function App() {
   
   return (
     <div className = "App">
-      
+      <React.Component Header></React.Component>
+        <React.Component List>
+          {activities.map((activity: any ) => {
+            <List.Item key={activity.id}>
+              {activity.title}
+            </List.Item>
+          })}
+        </React.Component>
     </div>
   );
 }
