@@ -9,13 +9,13 @@ namespace API.Controllers
 {
     public class ActivitiesController : BaseApiController
     {
-
-        [HttpGet]
+        [HttpGet] //api/activites
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
             return await Mediator.Send(new List.Query());
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("{id}")] //api/activties/someDetails
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
             return await Mediator.Send(new Details.Query{Id = id});

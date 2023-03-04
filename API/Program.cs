@@ -1,7 +1,4 @@
 using API.Extensions;
-using Application.Activities;
-using Application.Core;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -20,6 +17,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseCors("CorsPolicy");
 
 app.UseAuthorization();

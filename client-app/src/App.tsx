@@ -9,11 +9,12 @@ function App() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/activities')
+    axios.get("http://localhost:5000/api/activities")
       .then(response => {
+        if (!response) console.log("Pusty");
         console.log(response);
         setActivities(response.data);
-      })
+      }).catch(e => console.log(e));
   }, [])
   
   return (
